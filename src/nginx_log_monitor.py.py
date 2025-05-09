@@ -1,5 +1,6 @@
 import os
 import re
+import time
 from datetime import datetime
 import mysql.connector
 from dotenv import load_dotenv
@@ -194,7 +195,7 @@ class NginxLogHandler(FileSystemEventHandler):
 
 def main():
     access_log_path = os.getenv('ACCESS_LOG_PATH', '/var/log/nginx/*-access.log')
-    error_log_path = os.getenv('ERROR_LOG_PATH', '/var/log/nginx/*-error.log')
+    # error_log_path = os.getenv('ERROR_LOG_PATH', '/var/log/nginx/*-error.log')
     
     # Get directory from path pattern
     access_log_dir = os.path.dirname(access_log_path)
